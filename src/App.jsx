@@ -1,4 +1,4 @@
-import BubbleSortVisualizer from "./BubbleSort/BubbleSort"
+import BubbleSortVisualizer from "./BubbleSort/SortVisualizer"
 
 
 function App() {
@@ -7,7 +7,6 @@ function App() {
     <>
       <h1>Visual Sorting</h1>
       <BubbleSortVisualizer/>
-      what
     </>
   )
 }
