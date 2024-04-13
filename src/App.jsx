@@ -1,13 +1,13 @@
-import BubbleSortVisualizer from "./BubbleSort/SortVisualizer"
+import SortVisualizer from "./sortVisualizer/SortVisualizer.jsx"
 
 
 function App() {
 
   return (
-    <>
-      <h1>Visual Sorting</h1>
-      <BubbleSortVisualizer/>
-    </>
+    <div style={{
+    }}>
+      <SortVisualizer/>
+    </div>
   )
 }
 
