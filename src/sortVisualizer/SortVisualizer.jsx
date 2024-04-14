@@ -1,12 +1,14 @@
 import React from "react";
 import "./SortVisualizer.css";
 import DisplayBars from "./DisplayBars.jsx";
+import bubbleSort from "./algorithms/bubbleSort.js";
 
-const NUMBER_OF_BARS = 20;
-const INITIAL_COLOR = "blue";
+const NUMBER_OF_BARS = 10;
+const INITIAL_COLOR = "black";
 const COMPARING_COLOR = "red";
+const SWAP_COLOR = "blue";
 const COMPLETED_COLOR = "green";
-const SWAP_SPEED_MS = 500;
+const ANIMATION_SPEED_MS = 200;
 
 export default class SortVisualizer extends React.Component {
     constructor(props) {
@@ -31,21 +33,29 @@ export default class SortVisualizer extends React.Component {
         for (let i = 0; i < NUMBER_OF_BARS; i++){
             array.push(getRandomInt())
         }
+        //const array = [1,2,3,4,5,6,7,8,9];
         // init the array to have random integers to be represented with bars
         this.setState({array});
     }
 
     //function to call sort algo and receives an array with the necessary swaps
-    startSort() {
+    async startSort() {
         const copyArray = [...this.state.array];
-        const swaps = [[0,1],[1,2]]; //call actual function using copyArray
         
+        const swaps = bubbleSort(copyArray);
+        for(let swap of swaps){
+            await sleep(3);
+            animateBars(swap);  
+        }
+        /*
         let i = 1;
         for (let swap of swaps) {
-            setTimeout(swapBars, i*SWAP_SPEED_MS, swap);
+            setTimeout(swapBars, i*ANIMATION_SPEED_MS, swap, i);
             i++;
         }
+        */
         
+       
     }
     
     //function that will return something to be displayed initially
@@ -74,14 +84,26 @@ export default class SortVisualizer extends React.Component {
     }
 }
 
+async function sleep(n){
+    return new Promise(resolve => setTimeout(resolve, ANIMATION_SPEED_MS*n));
+}
+
 /* to show as if we change bars, we modify their height */
-function swapBars(pair) {
-
+async function animateBars(currentBars, i) {
     const arrayBars = document.getElementsByClassName("array-bar");
-    const b1 = arrayBars[pair[0]].style;
-    const b2 = arrayBars[pair[1]].style;
-
-    [b1.height, b2.height] = [b2.height, b1.height];
+    const b1 = arrayBars[currentBars[0]].style;
+    const b2 = arrayBars[currentBars[1]].style;
+    //change bars color to COMPARING and check if swap is needed
+    //await sleep();
+    b1.backgroundColor = b2.backgroundColor = COMPARING_COLOR;
+    await sleep(1);    
+    if(currentBars[2]){
+        [b1.height, b2.height] = [b2.height, b1.height];
+        b1.backgroundColor = b2.backgroundColor = SWAP_COLOR;
+    }
+    await sleep(1);
+    b1.backgroundColor = b2.backgroundColor = INITIAL_COLOR;
+    await sleep(1);    
 }
 
 
