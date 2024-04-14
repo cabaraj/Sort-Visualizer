@@ -4,9 +4,9 @@ import DisplayBars from "./DisplayBars.jsx";
 import bubbleSort from "./algorithms/bubbleSort.js";
 
 const NUMBER_OF_BARS = 10;
-const INITIAL_COLOR = "black";
-const COMPARING_COLOR = "red";
-const SWAP_COLOR = "blue";
+const INITIAL_COLOR = "gray";
+const COMPARING_COLOR = "blue";
+const SWAP_COLOR = "red";
 const COMPLETED_COLOR = "green";
 const ANIMATION_SPEED_MS = 200;
 
@@ -33,7 +33,6 @@ export default class SortVisualizer extends React.Component {
         for (let i = 0; i < NUMBER_OF_BARS; i++){
             array.push(getRandomInt())
         }
-        //const array = [1,2,3,4,5,6,7,8,9];
         // init the array to have random integers to be represented with bars
         this.setState({array});
     }
@@ -47,15 +46,6 @@ export default class SortVisualizer extends React.Component {
             await sleep(3);
             animateBars(swap);  
         }
-        /*
-        let i = 1;
-        for (let swap of swaps) {
-            setTimeout(swapBars, i*ANIMATION_SPEED_MS, swap, i);
-            i++;
-        }
-        */
-        
-       
     }
     
     //function that will return something to be displayed initially
@@ -69,8 +59,8 @@ export default class SortVisualizer extends React.Component {
                         <h1>Sorting Visualizer</h1>
                     </div>
                 </div>
-                <div className="row">
-                    <DisplayBars array={array} barColor={INITIAL_COLOR}/>                        
+                <div className="row" id="bar-container">
+                    <DisplayBars array={array} barColor={INITIAL_COLOR} noOfBars={NUMBER_OF_BARS}/>                        
                 </div>
                 <div className="row">
                     <div className="col">
@@ -106,23 +96,4 @@ async function animateBars(currentBars, i) {
     await sleep(1);    
 }
 
-
-
-
-/* to change the color of a bar:
-    get the style for the desired bar and change its background color
-    CHANGE BETWEEN BLACK AND RED
-    */
-function changeBarColor() {
-    console.log('BARS')
-    const arrayBars = document.getElementsByClassName("array-bar");
-    const barOneStyle = arrayBars[1].style;
-    barOneStyle.backgroundColor = 'red';
-
-    const index = [];
-    for (let i=0; i<NUMBER_OF_BARS;i++){
-        index.push(i)
-    }
-    //const bar = document
-}
 
