@@ -1,13 +1,18 @@
 import SortVisualizer from "./sortVisualizer/SortVisualizer.jsx"
 import Header from "./header/header.jsx"
-
+import { Route, Routes } from "react-router-dom"
+import BubbleSortPage from "./sortVisualizer/BubbleSortPage.jsx"
+import Home from "./sortVisualizer/HomePage.jsx"
 
 function App() {
 
   return (
     <>
       <Header/>
-      <SortVisualizer/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/bubble-sort" element={<BubbleSortPage/>} />
+      </Routes>
     </>
   )
 }

@@ -1,18 +1,15 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div className="container">
-                {/* Add a Reference for this page */}
-                <a
-                className="navbar-brand"
-                style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
-                href="#"
-                >
+                <Link to="/" className="navbar-brand" style={{ fontFamily: "Arial, Helvetica, sans-serif" }}>
                     <b style={{ color: "rgb(38, 195, 38)", fontSize: "x-large" }}>
                         Sorting Visualizer
                     </b>
-                </a>
+                </Link>
                 <button
                 className="navbar-toggler"
                 type="button"
@@ -39,6 +36,9 @@ export default function Header() {
                 </div>
                 <div className="offcanvas-body" id="offcanvasBody">
                     <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li className="nav-item">
+                        <Link to="/bubble-sort" className="nav-link active" id="nav-sub">Bubble Sort</Link>
+                    </li>
                     <li className="nav-item">
                         <a className="nav-link active" id="nav-sub" href="index.html">
                         About
