@@ -8,7 +8,7 @@ const INITIAL_COLOR = "gray";
 const COMPARING_COLOR = "blue";
 const SWAP_COLOR = "red";
 const COMPLETED_COLOR = "green";
-const ANIMATION_SPEED_MS = 200;
+const ANIMATION_WAIT_TIME_MS = 100;
 
 export default class SortVisualizer extends React.Component {
     constructor(props) {
@@ -54,11 +54,6 @@ export default class SortVisualizer extends React.Component {
         const array = this.state.array;
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <h1>Sorting Visualizer</h1>
-                    </div>
-                </div>
                 <div className="row" id="bar-container">
                     <DisplayBars array={array} barColor={INITIAL_COLOR} noOfBars={NUMBER_OF_BARS}/>                        
                 </div>
@@ -75,7 +70,8 @@ export default class SortVisualizer extends React.Component {
 }
 
 async function sleep(n){
-    return new Promise(resolve => setTimeout(resolve, ANIMATION_SPEED_MS*n));
+    // n is the number of times the function was called in the nested function
+    return new Promise(resolve => setTimeout(resolve, ANIMATION_WAIT_TIME_MS*n));
 }
 
 /* to show as if we change bars, we modify their height */
