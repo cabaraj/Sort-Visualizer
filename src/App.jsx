@@ -1,4 +1,3 @@
-import SortVisualizer from "./sortVisualizer/SortVisualizer.jsx"
 import Header from "./header/header.jsx"
 import { Route, Routes } from "react-router-dom"
 import BubbleSortPage from "./sortVisualizer/BubbleSortPage.jsx"
