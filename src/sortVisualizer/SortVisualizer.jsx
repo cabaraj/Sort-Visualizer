@@ -1,7 +1,7 @@
 import React from "react";
-import "./SortVisualizer.css";
+import "./styling.css";
 import DisplayBars from "./DisplayBars.jsx";
-import bubbleSort from "./algorithms/bubbleSort.js";
+import bubbleSort from "./algorithms/bubbleSortAlgo.js";
 
 const NUMBER_OF_BARS = 10;
 const INITIAL_COLOR = "gray";
@@ -41,7 +41,10 @@ export default class SortVisualizer extends React.Component {
     async startSort() {
         const copyArray = [...this.state.array];
         
-        const swaps = bubbleSort(copyArray);
+        let swaps = [];
+        if (this.props.algorithm === "bubble sort") {
+            swaps = bubbleSort(copyArray);
+        }
         for(let swap of swaps){
             await sleep(3);
             animateBars(swap);  
