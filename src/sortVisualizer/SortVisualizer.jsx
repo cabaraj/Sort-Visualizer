@@ -1,5 +1,4 @@
 import React from "react";
-import "./styling.css";
 import DisplayBars from "./DisplayBars.jsx";
 import bubbleSort from "./algorithms/bubbleSortAlgo.js";
 
