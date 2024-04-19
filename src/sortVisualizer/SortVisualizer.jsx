@@ -55,17 +55,17 @@ export default class SortVisualizer extends React.Component {
         //const {array} = this.state;
         const array = this.state.array;
         return (
-            <div className="container">
-                <div className="row" id="bar-container">
-                    <DisplayBars array={array} barColor={INITIAL_COLOR} noOfBars={NUMBER_OF_BARS}/>                        
-                </div>
+            <>
                 <div className="row">
                     <div className="col">
                         <button onClick={() => this.initArray()}>Generate New Array</button>
                         <button onClick={() => this.startSort()}>Sort</button>
                     </div>                
                 </div>
-            </div>
+                <div className="row" id="bar-container">
+                    <DisplayBars array={array} barColor={INITIAL_COLOR} noOfBars={NUMBER_OF_BARS}/>                        
+                </div>                
+            </>
         );
         
     }

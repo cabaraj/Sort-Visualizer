@@ -1,3 +1,4 @@
+/*header*/
 #brand-name{
     font-family: Audiowide, Lucida Console;
     color: white;
@@ -8,17 +9,60 @@
     font-weight: 600;
     text-align: center;
 }
+/*Body*/
 .row {
     text-align: center;
 }
-
-#bar-container{
-    height: 75vh;
-    width: 100%;
-    margin: 0px 30px 0px 0px;
+#title{
+    font-size: 7vh;
 }
-
-
+h3{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+p{
+    text-align: justify;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+td{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.code-content{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3%;
+    margin: auto;
+    width: fit-content;
+    text-align: left;
+    font-family: Lucida Console;
+}
+.code-content > .algo-name{
+    font-family: cursive;
+    color:blueviolet;
+}
+.code-content > .kw{
+    color: blue;
+    font-weight: bold;
+}
+.code-content > .var{
+    font-family:cursive;
+    font-style: italic;
+    color: green;
+}
+#test{
+    font-family: cursive;
+}
+/*Bars Section*/
+#bar-container{
+    height: 65vh;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin: 0px 30px 0px 0px;*/
+}
 .array-bar {
     display: inline-block;
     border: .5px solid black;
