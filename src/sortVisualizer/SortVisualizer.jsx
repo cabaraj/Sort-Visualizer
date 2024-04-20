@@ -15,6 +15,7 @@ export default class SortVisualizer extends React.Component {
         
         this.state = {
             array : [],
+            sorted: false,
         };
     }
 
@@ -38,16 +39,23 @@ export default class SortVisualizer extends React.Component {
 
     //function to call sort algo and receives an array with the necessary swaps
     async startSort() {
-        const copyArray = [...this.state.array];
+        //const copyArray = [...this.state.array];
+        if(isSorted(this.state.array)){
+            animateSortedBars();
+        } else {
+            let swaps = [];
+            if (this.props.algorithm === "bubble sort") {
+                //swaps = bubbleSort(copyArray);
+                swaps = bubbleSort(this.state.array);
+                //bubbleSort(this.state.array);
+            }
+            for(let swap of swaps){
+                await sleep(3);
+                animateBars(swap);  
+            }
+            animateSortedBars();
+        }
         
-        let swaps = [];
-        if (this.props.algorithm === "bubble sort") {
-            swaps = bubbleSort(copyArray);
-        }
-        for(let swap of swaps){
-            await sleep(3);
-            animateBars(swap);  
-        }
     }
     
     //function that will return something to be displayed initially
@@ -58,8 +66,8 @@ export default class SortVisualizer extends React.Component {
             <>
                 <div className="row">
                     <div className="col">
-                        <button onClick={() => this.initArray()}>Generate New Array</button>
-                        <button onClick={() => this.startSort()}>Sort</button>
+                        <button className="btn btn-secondary" onClick={() => this.initArray()}>Generate New Array</button>
+                        <button className="btn btn-secondary" onClick={() => this.startSort()}>Sort</button>
                     </div>                
                 </div>
                 <div className="row" id="bar-container">
@@ -69,6 +77,15 @@ export default class SortVisualizer extends React.Component {
         );
         
     }
+}
+
+function isSorted(arr){
+    for(let i = 0; i < arr.length - 1; i++){
+        if(arr[i] > arr[i+1]){
+            return false;
+        }
+    }
+    return true;
 }
 
 async function sleep(n){
@@ -94,4 +111,13 @@ async function animateBars(currentBars, i) {
     await sleep(1);    
 }
 
+async function animateSortedBars() {
+    const arrayBars = document.getElementsByClassName("array-bar");
+    for(let i = 0; i < NUMBER_OF_BARS; i++){
+        const b1 = arrayBars[i].style;
+        b1.backgroundColor = COMPLETED_COLOR;
+        await sleep(1);
+        b1.backgroundColor = INITIAL_COLOR;
+    }
+}
 

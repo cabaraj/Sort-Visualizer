@@ -20,7 +20,7 @@ h3{
     margin-top: 50px;
     margin-bottom: 30px;
 }
-p{
+p, li{
     text-align: justify;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
@@ -37,23 +37,11 @@ td{
     margin: auto;
     width: fit-content;
     text-align: left;
-    font-family: Lucida Console;
+    
 }
-.code-content > .algo-name{
-    font-family: cursive;
-    color:blueviolet;
-}
-.code-content > .kw{
-    color: blue;
-    font-weight: bold;
-}
-.code-content > .var{
-    font-family:cursive;
-    font-style: italic;
-    color: green;
-}
-#test{
-    font-family: cursive;
+pre{
+    font-family: Consolas, Courier New, monospace;
+    font-size: large;
 }
 /*Bars Section*/
 #bar-container{
@@ -66,4 +54,7 @@ td{
 .array-bar {
     display: inline-block;
     border: .5px solid black;
-  }
+}
+.btn{
+    margin: 2%;
+}

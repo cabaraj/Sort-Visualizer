@@ -18,30 +18,31 @@ export default function BubbleSortPage(){
                         While Bubble Sort is one of the simplest sorting algorithm to implement, it is also one of the least efficient.
                         <br/>
                         It operates by repeatedly comparing adjacent elements in a list and swapping them if they are in the wrong order. The algorithm is a process of multiple comparing and swapping steps described as follows:
-                        <br/>
-                        <ul>
-                            <li>
-                                The algorithm starts by comparing the first two elements in the list.
-                            </li>
-                            <li>
-                                If the first element is greater than the second, they are swapped.
-                            </li>
-                            <li>
-                                This process continues for adjacent pairs of elements throughout the entire list.
-                            </li>
-                            <li>
-                                After the first pass, the largest element will have “bubbled up” to the rightmost position.
-                            </li>
-                            <li>
-                                Bubble Sort repeats this process for subsequent passes.
-                            </li>
-                            <li>
-                                In each pass, the next largest element is moved to its correct position.
-                            </li>
-                            <li>
-                                The process continues until all elements are sorted.
-                            </li>
-                        </ul>	
+                    </p>
+                    <ul>
+                        <li>
+                            The algorithm starts by comparing the first two elements in the list.
+                        </li>
+                        <li>
+                            If the first element is greater than the second, they are swapped.
+                        </li>
+                        <li>
+                            This process continues for adjacent pairs of elements throughout the entire list.
+                        </li>
+                        <li>
+                            After the first pass, the largest element will have “bubbled up” to the rightmost position.
+                        </li>
+                        <li>
+                            Bubble Sort repeats this process for subsequent passes.
+                        </li>
+                        <li>
+                            In each pass, the next largest element is moved to its correct position.
+                        </li>
+                        <li>
+                            The process continues until all elements are sorted.
+                        </li>
+                    </ul>
+                    <p>	
                         This is the simplest version of Bubble Sort. However, there exist few optimized versions where it stops early if no swaps occur during an entire iteration. This avoids unnecessary iterations when the list is already sorted.
                     </p>
                 </div>
@@ -76,27 +77,19 @@ export default function BubbleSortPage(){
                 </div>
             </div>
             <div className="row">
-                <div className="col-6">
-                    <h3>Pseudo-Code</h3>
-                    <div className="code-content">                      
-                        <span className="kw">define </span><span className="algo-name">bubbleSort</span>(A):<br/>
-                        &emsp; <span className="var">n</span> = length(A) <br/>
-                        &emsp; <span className="kw">for</span> <span className="var">i</span> from 0 to (<span className="var">n</span>-1) <span className="kw">do:</span><br/>
-                        &emsp;&emsp; <span className="kw">for</span> <span className="var">j</span> from 0 to (<span className="var">n</span>-<span className="var">i</span>-1) <span className="kw">do:</span><br/>
-                        &emsp;&emsp;&emsp; <span className="kw">if</span> A[<span className="var">j</span>] {'>'} A[<span className="var">j</span>+1] <span className="kw">then:</span><br/>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;<span className="var">temp</span> = A[<span className="var">j</span>]<br/>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;A[<span className="var">j</span>] = A[<span className="var">j</span>+1]<br/>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;A[<span className="var">j</span>+1] = <span className="var">temp</span><br/>
-                    </div>
-                    <div className="code-content" id="test">                      
-                        <b>define </b>bubbleSort(A):<br/>
-                        &emsp; n = length(A) <br/>
-                        &emsp; <b>for</b> i from 0 to (n-1) <b>do:</b><br/>
-                        &emsp;&emsp; <b>for</b> j from 0 to (n-i-1) <b>do:</b><br/>
-                        &emsp;&emsp;&emsp; <b>if</b> A[j] {'>'} A[j+1] <b>then:</b><br/>
-                        &emsp;&emsp;&emsp;&emsp; temp = A[j]<br/>
-                        &emsp;&emsp;&emsp;&emsp; A[j] = A[j+1]<br/>
-                        &emsp;&emsp;&emsp;&emsp; A[j+1] = temp<br/>
+                <div className="col-12">
+                    <h3>Pseudocode Implementation</h3>
+                    <div className="code-content">
+                        <pre>
+                            <b>define </b>bubbleSort(A):{"\n"}
+                            {"  "}n = length(A){"\n"}
+                            {"  "}<b>for</b> i from 0 to (n-1) <b>do:</b>{"\n"}
+                            {"    "}<b>for</b> j from 0 to (n-i-1) <b>do:</b>{"\n"}
+                            {"      "}<b>if</b> A[j] {'>'} A[j+1] <b>then:</b>{"\n"}
+                            {"        "}temp = A[j]{"\n"}
+                            {"        "}A[j] = A[j+1]{"\n"}
+                            {"        "}A[j+1] = temp{"\n"}
+                        </pre>
                     </div>
                 </div>
             </div>            
