@@ -3,9 +3,6 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/repo/",
+  base: "/Sort-Visualizer/",
   plugins: [react()],
-  server: {
-    host: true,
-  },
 })
