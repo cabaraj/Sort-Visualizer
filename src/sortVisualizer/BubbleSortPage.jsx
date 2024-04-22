@@ -20,25 +20,25 @@ export default function BubbleSortPage(){
                         It operates by repeatedly comparing adjacent elements in a list and swapping them if they are in the wrong order. The algorithm is a process of multiple comparing and swapping steps described as follows:
                     </p>
                     <ul>
-                        <li>
+                        <li className="bullet-point">
                             The algorithm starts by comparing the first two elements in the list.
                         </li>
-                        <li>
+                        <li className="bullet-point">
                             If the first element is greater than the second, they are swapped.
                         </li>
-                        <li>
+                        <li className="bullet-point">
                             This process continues for adjacent pairs of elements throughout the entire list.
                         </li>
-                        <li>
+                        <li className="bullet-point">
                             After the first pass, the largest element will have “bubbled up” to the rightmost position.
                         </li>
-                        <li>
+                        <li className="bullet-point">
                             Bubble Sort repeats this process for subsequent passes.
                         </li>
-                        <li>
+                        <li className="bullet-point">
                             In each pass, the next largest element is moved to its correct position.
                         </li>
-                        <li>
+                        <li className="bullet-point">
                             The process continues until all elements are sorted.
                         </li>
                     </ul>

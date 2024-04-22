@@ -27,7 +27,7 @@ export default function Header() {
                 >
                     <div className="offcanvas-header">
                         {/* extra div to put the close button on the right side */}
-                        <div />
+                        <div></div>
                         <button
                             type="button"
                             className="btn-close btn-close-white text-reset"
@@ -37,7 +37,7 @@ export default function Header() {
                     </div>
                     <div className="offcanvas-body" id="offcanvasBody">
                         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li className="nav-item">
+                            <li className="nav-item" data-bs-dismiss="offcanvas">
                                 <Link to="/bubble-sort" className="nav-link active">Bubble Sort</Link>
                             </li>
                             <li className="nav-item">
