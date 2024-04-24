@@ -7,6 +7,7 @@ import BubbleSortPage from "./pages/BubbleSortPage.jsx"
 import InsertionSortPage from "./pages/InsertionSortPage.jsx"
 
 import TestingPage from "./pages/TestingPage.jsx"
+import ShellSortPage from "./pages/ShellSortPage.jsx"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/bubble-sort" element={<BubbleSortPage/>} />
         <Route path="/insertion-sort" element={<InsertionSortPage/>} />
+        <Route path="/shell-sort" element={<ShellSortPage/>} />
         <Route path="/testing" element={<TestingPage/>} />
       </Routes>
       <Footer/>
