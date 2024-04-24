@@ -11,40 +11,24 @@ export default function InsertionSortPage(){
             <SortVisualizer algorithm={'insertion sort'}/>
             <div className="row">
                 <div className="col-12 col-lg-8">
-                    <h3>Description</h3>
-                    <p>
-                        The name of Bubble Sort was given from the idea that under the water, bigger bubbles will reach the surface faster than the small ones. Thus, bigger elements will be sorted before those with smaller values.
-                        <br/>
-                        While Bubble Sort is one of the simplest sorting algorithm to implement, it is also one of the least efficient.
-                        <br/>
-                        It operates by repeatedly comparing adjacent elements in a list and swapping them if they are in the wrong order. The algorithm is a process of multiple comparing and swapping steps described as follows:
-                    </p>
+                    <h3>Approach</h3>
                     <ul>
                         <li className="bullet-point">
-                            The algorithm starts by comparing the first two elements in the list.
+                            Define a 'key' which will keep track of the 'end' of the sorted sub-array. This is initially the second element of the array.
                         </li>
                         <li className="bullet-point">
-                            If the first element is greater than the second, they are swapped.
+                            Set a variable 'i' to be the index of 'key'.
                         </li>
                         <li className="bullet-point">
-                            This process continues for adjacent pairs of elements throughout the entire list.
+                            Check if the value of element at [i] is less than the value of element at [i - 1]. If so swap the values and continue checking until element at [i] is greater than or equal to [i - 1] OR until 'i' is the first element.
                         </li>
                         <li className="bullet-point">
-                            After the first pass, the largest element will have “bubbled up” to the rightmost position.
+                            Increase key to be the next element after it and do the comparision process from the previous step.
                         </li>
                         <li className="bullet-point">
-                            Bubble Sort repeats this process for subsequent passes.
-                        </li>
-                        <li className="bullet-point">
-                            In each pass, the next largest element is moved to its correct position.
-                        </li>
-                        <li className="bullet-point">
-                            The process continues until all elements are sorted.
+                            Do this until 'key' is the last element in the array.
                         </li>
                     </ul>
-                    <p>	
-                        This is the simplest version of Bubble Sort. However, there exist few optimized versions where it stops early if no swaps occur during an entire iteration. This avoids unnecessary iterations when the list is already sorted.
-                    </p>
                 </div>
                 <div className="col-12 col-lg-4">
                     <h3>Complexity Analysis</h3>
@@ -81,14 +65,15 @@ export default function InsertionSortPage(){
                     <h3>Pseudocode Implementation</h3>
                     <div className="code-content">
                         <pre>
-                            <b>define </b>bubbleSort(A):{"\n"}
+                            <b>define </b>insertionSort(A):{"\n"}
                             {"  "}n = length(A){"\n"}
                             {"  "}<b>for</b> i from 0 to (n-1) <b>do:</b>{"\n"}
-                            {"    "}<b>for</b> j from 0 to (n-i-1) <b>do:</b>{"\n"}
-                            {"      "}<b>if</b> A[j] {'>'} A[j+1] <b>then:</b>{"\n"}
-                            {"        "}temp = A[j]{"\n"}
-                            {"        "}A[j] = A[j+1]{"\n"}
-                            {"        "}A[j+1] = temp{"\n"}
+                            {"    "}key = A[i]{"\n"}
+                            {"    "}j = i - 1{"\n"}
+                            {"    "}<b>while</b> j {'>='} 0 AND key {'<'} A[j] <b>do:</b>{"\n"}
+                            {"      "}A[j + 1] = A[j]{"\n"}
+                            {"      "}j = j - 1{"\n"}
+                            {"    "}A[j + 1] = key{"\n"}
                         </pre>
                     </div>
                 </div>
