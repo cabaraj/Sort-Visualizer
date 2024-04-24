@@ -9,7 +9,7 @@ export default function insertionSort(A){
         while(j >= 0 && A[j] > key){
             swaps.push([j, j+1, true]);
             A[j+1] = A[j];
-            j = j - 1;
+            j--;
         }
         swaps.push([j, j+1, false]);
         A[j + 1] = key;
