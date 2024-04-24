@@ -1,5 +1,5 @@
 import TestSortVisualizer from "./TestingPage2";
-import insertionSort from "./algorithms/insertionSortAlgo";
+import insertionSort from "../algorithms/insertionSortAlgo";
 
 export default function TestingPage(){
     let A = [2,8,5,3];
