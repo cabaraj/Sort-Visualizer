@@ -1,10 +1,12 @@
 import Header from "./headerAndFooter/header.jsx"
 import Footer from "./headerAndFooter/footer.jsx"
 import { Route, Routes } from "react-router-dom"
-import BubbleSortPage from "./sortVisualizer/BubbleSortPage.jsx"
-import Home from "./sortVisualizer/HomePage.jsx"
-import TestingPage from "./sortVisualizer/TestingPage.jsx"
-import InsertionSortPage from "./sortVisualizer/InsertionSortPage.jsx"
+
+import Home from "./pages/HomePage.jsx"
+import BubbleSortPage from "./pages/BubbleSortPage.jsx"
+import InsertionSortPage from "./pages/InsertionSortPage.jsx"
+
+import TestingPage from "./pages/TestingPage.jsx"
 
 function App() {
 
