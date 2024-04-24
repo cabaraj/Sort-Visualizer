@@ -44,6 +44,9 @@ export default function Header() {
                                 <Link to="/insertion-sort" className="nav-link active">Insertion Sort</Link>
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
+                                <Link to="/shell-sort" className="nav-link active">Shell Sort</Link>
+                            </li>
+                            <li className="nav-item" data-bs-dismiss="offcanvas">
                                 <Link to="/testing" className="nav-link active">Testing</Link>
                             </li>
 
