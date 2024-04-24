@@ -40,6 +40,13 @@ export default function Header() {
                             <li className="nav-item" data-bs-dismiss="offcanvas">
                                 <Link to="/bubble-sort" className="nav-link active">Bubble Sort</Link>
                             </li>
+                            <li className="nav-item" data-bs-dismiss="offcanvas">
+                                <Link to="/insertion-sort" className="nav-link active">Insertion Sort</Link>
+                            </li>
+                            <li className="nav-item" data-bs-dismiss="offcanvas">
+                                <Link to="/testing" className="nav-link active">Testing</Link>
+                            </li>
+
                             <li className="nav-item">
                                 <a
                                     className="nav-link active"

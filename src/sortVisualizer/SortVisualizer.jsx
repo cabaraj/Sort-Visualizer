@@ -1,6 +1,7 @@
 import React from "react";
 import DisplayBars from "./DisplayBars.jsx";
 import bubbleSort from "./algorithms/bubbleSortAlgo.js";
+import insertionSort from "./algorithms/insertionSortAlgo.js";
 
 const INITIAL_NUMBER_OF_BARS = 30;
 const INITIAL_ANIMATION_WAIT_TIME_MS = 110;
@@ -68,6 +69,8 @@ export default class SortVisualizer extends React.Component {
             let swaps = [];
             if (this.props.algorithm === "bubble sort") {
                 swaps = bubbleSort(copyArray);
+            } else if(this.props.algorithm === "insertion sort") {
+                swaps = insertionSort(copyArray);
             }
             for(let swap of swaps){
                 this.animateBars(swap);

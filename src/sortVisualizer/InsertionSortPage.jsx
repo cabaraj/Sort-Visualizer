@@ -1,14 +1,14 @@
 import SortVisualizer from "./SortVisualizer";
 
-export default function BubbleSortPage(){
+export default function InsertionSortPage(){
     return (
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Bubble Sort</h1>
+                    <h1 id="title">Insertion Sort</h1>
                 </div>
             </div>            
-            <SortVisualizer algorithm={'bubble sort'}/>
+            <SortVisualizer algorithm={'insertion sort'}/>
             <div className="row">
                 <div className="col-12 col-lg-8">
                     <h3>Description</h3>
