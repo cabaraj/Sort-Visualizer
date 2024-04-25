@@ -1,32 +1,31 @@
 import SortVisualizer from "../sortVisualizer/SortVisualizer";
 
-export default function ShellSortPage(){
+export default function QuickSortPage(){
     return (
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Shell Sort</h1>
+                    <h1 id="title">Quick Sort</h1>
                 </div>
             </div>            
-            <SortVisualizer algorithm={'shell sort'}/>
+            <SortVisualizer algorithm={'quick sort'}/>
             <div className="row">
                 <div className="col-12 col-lg-8">
                     <h3>Approach</h3>
                     <ul>
                         <li className="bullet-point">
-                            Define a gap to compare elements apart by the value of the gap. This sample initiates gap to be half the size of the array.
                         </li>
                         <li className="bullet-point">
-                            Traverse the list of elements comparing the element at index (i) with element at (i + gap) until element at (i + gap) is the last one in the list.
                         </li>
                         <li className="bullet-point">
-                            While traversing the list, swap the elements if element at (i) is greater than element at (i + gap).
                         </li>
                         <li className="bullet-point">
-                            Update the value of gap to be half its value.
                         </li>
                         <li className="bullet-point">
-                            Repeat previous steps until the value of gap equals 1.
+                        </li>
+                        <li className="bullet-point">
+                        </li>
+                        <li className="bullet-point">
                         </li>
                     </ul>
                 </div>
@@ -37,11 +36,11 @@ export default function ShellSortPage(){
                         <tbody>
                             <tr>
                                 <td>Best Case</td>
-                                <td>O(n*log(n))</td>
+                                <td>O()</td>
                             </tr>
                             <tr>
                                 <td>Average Case</td>
-                                <td>~ O(n<sup>1.25</sup>)</td>
+                                <td>O())</td>
                             </tr>
                             <tr>
                                 <td>Worst Case</td>
@@ -65,18 +64,14 @@ export default function ShellSortPage(){
                     <h3>Pseudocode Implementation</h3>
                     <div className="code-content">
                         <pre>
-                            <b>define</b> shellSort(A):{"\n"}
+                            <b>define </b>bubbleSort(A):{"\n"}
                             {"  "}n = length(A){"\n"}
-                            {"  "}gap = n / 2{"\n"}
-                            {"  "}<b>while</b> gap {'>'} 0 <b>do:</b>{"\n"}
-                            {"    "}<b>for</b> i from gap to n <b>do:</b>{"\n"}
-                            {"      "}temp = A[i]{"\n"}
-                            {"      "}j = i{"\n"}
-                            {"      "}<b>while</b> j {'>='} gap AND A[j - gap] {'>'} temp <b>do:</b>{"\n"}
-                            {"        "}A[j] = A[j - gap]{"\n"}
-                            {"        "}j = j - gap{"\n"}
-                            {"      "}A[j] = temp{"\n"}
-                            {"    "}gap = gap/2{"\n"}
+                            {"  "}<b>for</b> i from 0 to (n-1) <b>do:</b>{"\n"}
+                            {"    "}<b>for</b> j from 0 to (n-i-1) <b>do:</b>{"\n"}
+                            {"      "}<b>if</b> A[j] {'>'} A[j+1] <b>then:</b>{"\n"}
+                            {"        "}temp = A[j]{"\n"}
+                            {"        "}A[j] = A[j+1]{"\n"}
+                            {"        "}A[j+1] = temp{"\n"}
                         </pre>
                     </div>
                 </div>
