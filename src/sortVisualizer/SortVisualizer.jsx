@@ -2,6 +2,7 @@ import React from "react";
 import DisplayBars from "./DisplayBars.jsx";
 import bubbleSort from "../algorithms/bubbleSortAlgo.js";
 import insertionSort from "../algorithms/insertionSortAlgo.js";
+import shellSort from "../algorithms/shellSortAlgo.js";
 
 const INITIAL_NUMBER_OF_BARS = 30;
 const INITIAL_ANIMATION_WAIT_TIME_MS = 110;
@@ -10,6 +11,12 @@ const COMPARING_COLOR = "blue";
 const SWAP_COLOR = "red";
 const NO_SWAP_COLOR = "black"
 const COMPLETED_COLOR = "green";
+
+const ALGORITHM = {
+    'bubble sort' : bubbleSort,
+    'insertion sort': insertionSort,
+    'shell sort' : shellSort,
+}
 
 
 export default class SortVisualizer extends React.Component {
@@ -66,12 +73,9 @@ export default class SortVisualizer extends React.Component {
 
         if(!this.state.isSorted){
             this.setState({isSorted:true});
-            let swaps = [];
-            if (this.props.algorithm === "bubble sort") {
-                swaps = bubbleSort(copyArray);
-            } else if(this.props.algorithm === "insertion sort") {
-                swaps = insertionSort(copyArray);
-            }
+            
+            const swaps = ALGORITHM[this.props.algorithm](copyArray);
+
             for(let swap of swaps){
                 this.animateBars(swap);
                 await this.sleep(3); 
