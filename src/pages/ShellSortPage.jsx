@@ -58,13 +58,14 @@ export default function ShellSortPage(){
                             </tr>
                         </tbody>
                     </table>
+                    <i>Where <b>n</b> is the number of elements in the array.</i><br/>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12">
                     <h3>Pseudocode Implementation</h3>
-                    <div className="code-content">
-                        <pre>
+                    <div>
+                        <pre className="code-content">
                             <b>define</b> shellSort(A):{"\n"}
                             {"  "}n = length(A){"\n"}
                             {"  "}gap = n / 2{"\n"}
@@ -72,8 +73,8 @@ export default function ShellSortPage(){
                             {"    "}<b>for</b> i from gap to n <b>do:</b>{"\n"}
                             {"      "}temp = A[i]{"\n"}
                             {"      "}j = i{"\n"}
-                            {"      "}<b>while</b> j {'>='} gap AND A[j - gap] {'>'} temp <b>do:</b>{"\n"}
-                            {"        "}A[j] = A[j - gap]{"\n"}
+                            {"      "}<b>while</b> j {'>='} gap AND A[j-gap] {'>'} temp <b>do:</b>{"\n"}
+                            {"        "}A[j] = A[j-gap]{"\n"}
                             {"        "}j = j - gap{"\n"}
                             {"      "}A[j] = temp{"\n"}
                             {"    "}gap = gap/2{"\n"}
