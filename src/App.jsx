@@ -9,6 +9,7 @@ import InsertionSortPage from "./pages/InsertionSortPage.jsx"
 import TestingPage from "./pages/TestingPage.jsx"
 import ShellSortPage from "./pages/ShellSortPage.jsx"
 import QuickSortPage from "./pages/QuickSortPage.jsx"
+import MergeSortPage from "./pages/MergeSortPage.jsx"
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/insertion-sort" element={<InsertionSortPage/>} />
         <Route path="/shell-sort" element={<ShellSortPage/>} />
         <Route path="/quick-sort" element={<QuickSortPage/>} />
+        <Route path="/merge-sort" element={<MergeSortPage/>} />
         <Route path="/testing" element={<TestingPage/>} />
       </Routes>
       <Footer/>

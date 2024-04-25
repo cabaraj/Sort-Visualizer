@@ -12,20 +12,20 @@ export default function ShellSortPage(){
             <div className="row">
                 <div className="col-12 col-lg-8">
                     <h3>Approach</h3>
-                    <ul>
-                        <li className="bullet-point">
+                    <ul className="bullet-point">
+                        <li>
                             Define a gap to compare elements apart by the value of the gap. This sample initiates gap to be half the size of the array.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             Traverse the list of elements comparing the element at index (i) with element at (i + gap) until element at (i + gap) is the last one in the list.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             While traversing the list, swap the elements if element at (i) is greater than element at (i + gap).
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             Update the value of gap to be half its value.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             Repeat previous steps until the value of gap equals 1.
                         </li>
                     </ul>

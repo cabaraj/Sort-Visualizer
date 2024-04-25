@@ -50,6 +50,9 @@ export default function Header() {
                                 <Link to="/quick-sort" className="nav-link active">Quick Sort</Link>
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
+                                <Link to="/merge-sort" className="nav-link active">Merge Sort</Link>
+                            </li>
+                            <li className="nav-item" data-bs-dismiss="offcanvas">
                                 <Link to="/testing" className="nav-link active">Testing</Link>
                             </li>
 
