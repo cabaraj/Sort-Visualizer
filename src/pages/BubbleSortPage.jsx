@@ -12,26 +12,26 @@ export default function BubbleSortPage(){
             <div className="row">
                 <div className="col-12 col-lg-8">
                     <h3>Approach</h3>
-                    <ul>
-                        <li className="bullet-point">
+                    <ul className="bullet-point">
+                        <li>
                             The algorithm starts by comparing the first two elements in the list.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             If the first element is greater than the second, they are swapped.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             This process continues for adjacent pairs of elements throughout the entire list.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             After the first pass, the largest element will have “bubbled up” to the rightmost position.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             Bubble Sort repeats this process for subsequent passes.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             In each pass, the next largest element is moved to its correct position.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             The process continues until all elements are sorted.
                         </li>
                     </ul>

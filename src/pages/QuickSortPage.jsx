@@ -12,17 +12,17 @@ export default function QuickSortPage(){
             <div className="row">
                 <div className="col-12 col-lg-8">
                     <h3>Approach</h3>
-                    <ul>
-                        <li className="bullet-point">
+                    <ul className="bullet-point">
+                        <li>
                             Create a helper function <i>partition()</i> to place the pivot (could be choosen at random, but this sample chooses the last element in the subarray as the pivot) at its correct position in the sorted array.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             In <i>partition()</i> store elements less than pivot in left subarray and elements greater than pivot in right subarray.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             Call quicksort recursively on the left subarray.
                         </li>
-                        <li className="bullet-point">
+                        <li>
                             Call quicksort recursively on the right subarray.
                         </li>
                     </ul>
