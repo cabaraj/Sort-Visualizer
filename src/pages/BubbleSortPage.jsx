@@ -35,7 +35,7 @@ export default function BubbleSortPage(){
                             The process continues until all elements are sorted.
                         </li>
                     </ul>
-                    <p>	
+                    <p className="p-justify">	
                         <b>NOTE:</b> This is the simplest version of Bubble Sort. However, there exist few optimized versions where it stops early if no swaps occur during an entire iteration. This avoids unnecessary iterations when the list is already sorted.
                     </p>
                 </div>
@@ -67,21 +67,20 @@ export default function BubbleSortPage(){
                             </tr>
                         </tbody>
                     </table>
+                    <i>Where <b>n</b> is the number of elements in the array.</i><br/>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12">
                     <h3>Pseudocode Implementation</h3>
-                    <div className="code-content">
-                        <pre>
+                    <div>
+                        <pre className="code-content">
                             <b>define </b>bubbleSort(A):{"\n"}
                             {"  "}n = length(A){"\n"}
                             {"  "}<b>for</b> i from 0 to (n-1) <b>do:</b>{"\n"}
                             {"    "}<b>for</b> j from 0 to (n-i-1) <b>do:</b>{"\n"}
                             {"      "}<b>if</b> A[j] {'>'} A[j+1] <b>then:</b>{"\n"}
-                            {"        "}temp = A[j]{"\n"}
-                            {"        "}A[j] = A[j+1]{"\n"}
-                            {"        "}A[j+1] = temp{"\n"}
+                            {"        "}swap A[j] with A[j+1]{"\n"}
                         </pre>
                     </div>
                 </div>

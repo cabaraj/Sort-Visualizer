@@ -58,22 +58,23 @@ export default function InsertionSortPage(){
                             </tr>
                         </tbody>
                     </table>
+                    <i>Where <b>n</b> is the number of elements in the array.</i><br/>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12">
                     <h3>Pseudocode Implementation</h3>
-                    <div className="code-content">
-                        <pre>
+                    <div>
+                        <pre className="code-content">
                             <b>define</b> insertionSort(A):{"\n"}
                             {"  "}n = length(A){"\n"}
                             {"  "}<b>for</b> i from 0 to (n-1) <b>do:</b>{"\n"}
                             {"    "}key = A[i]{"\n"}
                             {"    "}j = i - 1{"\n"}
                             {"    "}<b>while</b> j {'>='} 0 AND key {'<'} A[j] <b>do:</b>{"\n"}
-                            {"      "}A[j + 1] = A[j]{"\n"}
+                            {"      "}A[j+1] = A[j]{"\n"}
                             {"      "}j = j - 1{"\n"}
-                            {"    "}A[j + 1] = key{"\n"}
+                            {"    "}A[j+1] = key{"\n"}
                         </pre>
                     </div>
                 </div>
