@@ -10,35 +10,36 @@ export default function MergeSortPage(){
             </div>            
             <SortVisualizer algorithm={'merge sort'}/>
             <div className="row">
-                <div className="col-12 col-lg-8">
+                <div className="col-12 col-lg-7">
                     <h3>Approach</h3>
-                    <ul>
-                        <li className="bullet-point">
+                    <ul className="bullet-point">
+                        <li>
+                            Divide the array into two halves based on the midpoint.
                         </li>
-                        <li className="bullet-point">
+                        <li>
+                            Recursively call the merge sort function for both subarrays until the subarray has only one element in it.
                         </li>
-                        <li className="bullet-point">
-                        </li>
-                        <li className="bullet-point">
+                        <li>
+                            After the recursive call, iterate over the two subarray merging their sorted values into the original array, keeping track of the current indeces.
                         </li>
                     </ul>
                 </div>
-                <div className="col-12 col-lg-4">
+                <div className="col-12 col-lg-5">
                     <h3>Complexity Analysis</h3>
                     <h4 className="table-heading">Time</h4>
                     <table className="table table-striped">
                         <tbody>
                             <tr>
                                 <td>Best Case</td>
-                                <td>O()</td>
+                                <td>O(n*log(n))</td>
                             </tr>
                             <tr>
                                 <td>Average Case</td>
-                                <td>O()</td>
+                                <td>O(n*log(n))</td>
                             </tr>
                             <tr>
                                 <td>Worst Case</td>
-                                <td>O(n<sup>2</sup>)</td>
+                                <td>O(n*log(n))</td>
                             </tr>
                         </tbody>
                     </table>
@@ -47,7 +48,7 @@ export default function MergeSortPage(){
                         <tbody>
                             <tr>
                                 <td>Auxiliary Space</td>
-                                <td>O(1)</td>
+                                <td>O(n)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -60,6 +61,30 @@ export default function MergeSortPage(){
                     <div>
                         <pre className="code-content">
                             <b>define </b>mergeSort(A):{"\n"}
+                            {"  "}n = length(A){"\n"}
+                            {"  "}<b>if</b> n {'>'} 1 <b>then:</b>{"\n"}
+                            {"    "}midpoint = floor_of(n/2){"\n"}
+                            {"    "}left = A[0, midpoint]{"\n"}
+                            {"    "}right = A[midpoint, n]{"\n"}
+                            {"    "}mergeSort(left){"\n"}
+                            {"    "}mergeSort(right){"\n"}
+                            {"    "}i = j = k = 0{"\n"}
+                            {"    "}<b>while</b> i {'<'} length(left) AND j {'<'} length(right) <b>do:</b>{"\n"}
+                            {"      "}<b>if</b> left[i] {'<'} right[i] <b>then:</b>{"\n"}
+                            {"        "}A[k] = left[i]{"\n"}
+                            {"        "}i++{"\n"}
+                            {"      "}<b>else then:</b>{"\n"}
+                            {"        "}A[k] = right[j]{"\n"}
+                            {"        "}j++{"\n"}
+                            {"      "}k++{"\n"}
+                            {"    "}<b>while</b> i {'<'} length(left):{"\n"}
+                            {"      "}A[k] = left[i]{"\n"}
+                            {"      "}i++{"\n"}
+                            {"      "}k++{"\n"}
+                            {"    "}<b>while</b> j {'<'} length(right):{"\n"}
+                            {"      "}A[k] = right[j]{"\n"}
+                            {"      "}j++{"\n"}
+                            {"      "}k++{"\n"}
                         </pre>
                     </div>
                 </div>

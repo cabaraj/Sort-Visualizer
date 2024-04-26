@@ -4,6 +4,7 @@ import bubbleSort from "../algorithms/bubbleSortAlgo.js";
 import insertionSort from "../algorithms/insertionSortAlgo.js";
 import shellSort from "../algorithms/shellSortAlgo.js";
 import quickSort from "../algorithms/quickSortAlgo.js";
+import mergeSort from "../algorithms/mergeSortAlgo.js";
 
 const INITIAL_NUMBER_OF_BARS = 30;
 const INITIAL_ANIMATION_WAIT_TIME_MS = 110;
@@ -18,6 +19,7 @@ const ALGORITHM = {
     'insertion sort': insertionSort,
     'shell sort' : shellSort,
     'quick sort' : quickSort,
+    'merge sort' : mergeSort,
 }
 
 
@@ -30,6 +32,7 @@ export default class SortVisualizer extends React.Component {
             isSorted: false,
             numberOfBars: INITIAL_NUMBER_OF_BARS,
             waitTime: INITIAL_ANIMATION_WAIT_TIME_MS,
+            maxValue : 0,
         };
     }
 
@@ -49,7 +52,8 @@ export default class SortVisualizer extends React.Component {
             newArray.push(getRandomInt())
         }
         // init the array to have random integers to be represented with bars
-        this.setState({array:newArray, isSorted:false});
+        const m = Math.max(...newArray);
+        this.setState({array:newArray, isSorted:false, maxValue:m });
         this.updateWaitTime();
         this.resetBarColor();
     }
@@ -75,15 +79,22 @@ export default class SortVisualizer extends React.Component {
 
         if(!this.state.isSorted){
             this.setState({isSorted:true});
-            
             const swaps = ALGORITHM[this.props.algorithm](copyArray);
-
-            for(let swap of swaps){
-                this.animateBars(swap);
-                await this.sleep(3); 
+            if(this.props.algorithm === 'merge sort'){
+                for(let swap of swaps){
+                    this.animateMergedBars(swap);
+                    let n = swap[1].length;
+                    await this.sleep(2*n);
+                }
+            }
+            else{
+                for(let swap of swaps){
+                    this.animateBars(swap);
+                    await this.sleep(3); 
+                }
             }
             await this.sleep(1);
-            this.animateSortedBars();
+            this.animateSortedBars();            
         }
         
         this.activateButtons();
@@ -148,6 +159,7 @@ export default class SortVisualizer extends React.Component {
         const b2 = arrayBars[currentBars[1]].style;
         
         b1.backgroundColor = b2.backgroundColor = COMPARING_COLOR;
+
         await this.sleep(1);    
         if(currentBars[2]){
             [b1.height, b2.height] = [b2.height, b1.height];
@@ -158,6 +170,23 @@ export default class SortVisualizer extends React.Component {
         await this.sleep(1);
         b1.backgroundColor = b2.backgroundColor = INITIAL_COLOR;
         await this.sleep(1);    
+    }
+
+    async animateMergedBars(info){
+        let i = info[0];
+        const arr = info[1];
+
+        const arrayBars = document.getElementsByClassName("array-bar");
+        for(let val of arr){
+            let b = arrayBars[i].style;
+            b.height = `${val/this.state.maxValue*100}%`;
+            b.backgroundColor = COMPARING_COLOR;
+            await this.sleep(1);
+            b.backgroundColor = INITIAL_COLOR;
+            await this.sleep(1); 
+            i++;
+        }
+
     }
 
     async animateSortedBars() {

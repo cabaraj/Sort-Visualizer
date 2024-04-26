@@ -21,8 +21,8 @@ function App() {
         <Route path="/bubble-sort" element={<BubbleSortPage/>} />
         <Route path="/insertion-sort" element={<InsertionSortPage/>} />
         <Route path="/shell-sort" element={<ShellSortPage/>} />
-        <Route path="/quick-sort" element={<QuickSortPage/>} />
         <Route path="/merge-sort" element={<MergeSortPage/>} />
+        <Route path="/quick-sort" element={<QuickSortPage/>} />
         <Route path="/testing" element={<TestingPage/>} />
       </Routes>
       <Footer/>
