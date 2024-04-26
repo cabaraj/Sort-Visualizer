@@ -10,7 +10,7 @@ export default function ShellSortPage(){
             </div>            
             <SortVisualizer algorithm={'shell sort'}/>
             <div className="row">
-                <div className="col-12 col-lg-8">
+                <div className="col-12 col-lg-7">
                     <h3>Approach</h3>
                     <ul className="bullet-point">
                         <li>
@@ -30,7 +30,7 @@ export default function ShellSortPage(){
                         </li>
                     </ul>
                 </div>
-                <div className="col-12 col-lg-4">
+                <div className="col-12 col-lg-5">
                     <h3>Complexity Analysis</h3>
                     <h4 className="table-heading">Time</h4>
                     <table className="table table-striped">
