@@ -5,7 +5,7 @@ export default function QuickSortPage(){
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Quick Sort</h1>
+                    <h1 className="title">Quick Sort</h1>
                 </div>
             </div>            
             <SortVisualizer algorithm={'quick sort'}/>
@@ -78,9 +78,11 @@ export default function QuickSortPage(){
                             {"  "}j = right - 1{"\n"}
                             {"  "}pivot = A[right]{"\n"}
                             {"  "}<b>while</b> i {'<'} j <b>do:</b>{"\n"}
-                            {"    "}<b>while</b> i {'<'} right AND A[i] {'<'} pivot <b>do:</b>{"\n"}
+                            {"    "}<b>while</b> i {'<'} right{"\n"}
+                            {"        "}<b>and</b> A[i] {'<'} pivot <b>do:</b>{"\n"}
                             {"      "}i = i + 1{"\n"}
-                            {"    "}<b>while</b> j {'>'} left AND A[j] {'>'} pivot <b>do:</b>{"\n"}
+                            {"    "}<b>while</b> j {'>'} left{"\n"}
+                            {"        "}<b>and</b> A[j] {'>'} pivot <b>do:</b>{"\n"}
                             {"      "}j = j - 1{"\n"}
                             {"    "}<b>if</b> i {'<'} j <b>then:</b>{"\n"}
                             {"      "}swap A[i] with A[j]{"\n"}

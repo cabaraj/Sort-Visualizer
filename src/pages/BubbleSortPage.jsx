@@ -5,7 +5,7 @@ export default function BubbleSortPage(){
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Bubble Sort</h1>
+                    <h1 className="title">Bubble Sort</h1>
                 </div>
             </div>            
             <SortVisualizer algorithm={'bubble sort'}/>

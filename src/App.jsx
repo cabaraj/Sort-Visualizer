@@ -5,8 +5,6 @@ import { Route, Routes } from "react-router-dom"
 import Home from "./pages/HomePage.jsx"
 import BubbleSortPage from "./pages/BubbleSortPage.jsx"
 import InsertionSortPage from "./pages/InsertionSortPage.jsx"
-
-import TestingPage from "./pages/TestingPage.jsx"
 import ShellSortPage from "./pages/ShellSortPage.jsx"
 import QuickSortPage from "./pages/QuickSortPage.jsx"
 import MergeSortPage from "./pages/MergeSortPage.jsx"
@@ -23,7 +21,6 @@ function App() {
         <Route path="/shell-sort" element={<ShellSortPage/>} />
         <Route path="/merge-sort" element={<MergeSortPage/>} />
         <Route path="/quick-sort" element={<QuickSortPage/>} />
-        <Route path="/testing" element={<TestingPage/>} />
       </Routes>
       <Footer/>
     </>
