@@ -5,7 +5,7 @@ export default function MergeSortPage(){
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Merge Sort</h1>
+                    <h1 className="title">Merge Sort</h1>
                 </div>
             </div>            
             <SortVisualizer algorithm={'merge sort'}/>
@@ -69,7 +69,8 @@ export default function MergeSortPage(){
                             {"    "}mergeSort(left){"\n"}
                             {"    "}mergeSort(right){"\n"}
                             {"    "}i = j = k = 0{"\n"}
-                            {"    "}<b>while</b> i {'<'} length(left) AND j {'<'} length(right) <b>do:</b>{"\n"}
+                            {"    "}<b>while</b> i {'<'} length(left){"\n"}
+                            {"        "}<b>and</b> j {'<'} length(right) <b>do:</b>{"\n"}
                             {"      "}<b>if</b> left[i] {'<'} right[i] <b>then:</b>{"\n"}
                             {"        "}A[k] = left[i]{"\n"}
                             {"        "}i++{"\n"}

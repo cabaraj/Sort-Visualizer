@@ -8,11 +8,11 @@ import mergeSort from "../algorithms/mergeSortAlgo.js";
 
 const INITIAL_NUMBER_OF_BARS = 30;
 const INITIAL_ANIMATION_WAIT_TIME_MS = 110;
-const INITIAL_COLOR = "gray";
-const COMPARING_COLOR = "blue";
-const SWAP_COLOR = "red";
-const NO_SWAP_COLOR = "black"
-const COMPLETED_COLOR = "green";
+const INITIAL_COLOR = '#4e626f';
+const COMPARING_COLOR = '#e39f4d';
+const SWAP_COLOR = '#1d9559';
+const NO_SWAP_COLOR = '#e3614d';
+const COMPLETED_COLOR = '#1d9559';
 
 const ALGORITHM = {
     'bubble sort' : bubbleSort,
@@ -90,7 +90,7 @@ export default class SortVisualizer extends React.Component {
             else{
                 for(let swap of swaps){
                     this.animateBars(swap);
-                    await this.sleep(3); 
+                    await this.sleep(3);
                 }
             }
             await this.sleep(1);
@@ -121,8 +121,8 @@ export default class SortVisualizer extends React.Component {
                         
                         <div className="btn slideContainer">
                             <div>
-                                {'Elements: '}
-                                <span id="elementAmount">{INITIAL_NUMBER_OF_BARS}</span>
+                                <b>{'Elements: '}
+                                <span id="elementAmount">{INITIAL_NUMBER_OF_BARS}</span></b>
                                 <br/>
                             </div>
                             <input

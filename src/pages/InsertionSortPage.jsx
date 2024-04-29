@@ -5,7 +5,7 @@ export default function InsertionSortPage(){
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Insertion Sort</h1>
+                    <h1 className="title">Insertion Sort</h1>
                 </div>
             </div>            
             <SortVisualizer algorithm={'insertion sort'}/>
@@ -71,7 +71,8 @@ export default function InsertionSortPage(){
                             {"  "}<b>for</b> i from 0 to (n-1) <b>do:</b>{"\n"}
                             {"    "}key = A[i]{"\n"}
                             {"    "}j = i - 1{"\n"}
-                            {"    "}<b>while</b> j {'>='} 0 AND key {'<'} A[j] <b>do:</b>{"\n"}
+                            {"    "}<b>while</b> j {'>='} 0{"\n"}
+                            {"        "}<b>and</b> key {'<'} A[j] <b>do:</b>{"\n"}
                             {"      "}A[j+1] = A[j]{"\n"}
                             {"      "}j = j - 1{"\n"}
                             {"    "}A[j+1] = key{"\n"}

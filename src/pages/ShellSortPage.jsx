@@ -5,7 +5,7 @@ export default function ShellSortPage(){
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h1 id="title">Shell Sort</h1>
+                    <h1 className="title">Shell Sort</h1>
                 </div>
             </div>            
             <SortVisualizer algorithm={'shell sort'}/>
@@ -73,7 +73,8 @@ export default function ShellSortPage(){
                             {"    "}<b>for</b> i from gap to n <b>do:</b>{"\n"}
                             {"      "}temp = A[i]{"\n"}
                             {"      "}j = i{"\n"}
-                            {"      "}<b>while</b> j {'>='} gap AND A[j-gap] {'>'} temp <b>do:</b>{"\n"}
+                            {"      "}<b>while</b> j {'>='} gap{"\n"}
+                            {"          "}<b>and</b> A[j-gap] {'>'} temp <b>do:</b>{"\n"}
                             {"        "}A[j] = A[j-gap]{"\n"}
                             {"        "}j = j - gap{"\n"}
                             {"      "}A[j] = temp{"\n"}

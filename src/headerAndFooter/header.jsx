@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
             <div className="container">
                 <Link to="/" className="navbar-brand">
                     <b id="brand-name">
@@ -20,7 +20,7 @@ export default function Header() {
                     <span className="navbar-toggler-icon" />
                 </button>
                 <div
-                    className="offcanvas offcanvas-end bg-dark"
+                    className="offcanvas offcanvas-end"
                     tabIndex={-1}
                     id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel"
@@ -51,9 +51,6 @@ export default function Header() {
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
                                 <Link to="/quick-sort" className="nav-link active">Quick Sort</Link>
-                            </li>                            
-                            <li className="nav-item" data-bs-dismiss="offcanvas">
-                                <Link to="/testing" className="nav-link active">Testing</Link>
                             </li>
 
                             <li className="nav-item">
