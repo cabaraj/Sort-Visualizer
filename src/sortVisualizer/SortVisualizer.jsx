@@ -42,6 +42,12 @@ export default class SortVisualizer extends React.Component {
     }
     //PAINT ALL BARS GRAY
     initArray() {
+        //reset slider value
+        const slider = document.getElementById('speedSlider');
+        slider.value = 1;
+        const speedOutput = document.getElementById('speedAmount');
+        speedOutput.innerHTML = 1;
+
         const n = this.state.numberOfBars;
         function getRandomInt() {
             return Math.floor(Math.random() * n)+1
@@ -108,6 +114,17 @@ export default class SortVisualizer extends React.Component {
         this.state.numberOfBars = slider.value;
         this.initArray();
     }
+
+    updateSpeed() {
+        
+        const slider = document.getElementById('speedSlider');
+        const elementOutput = document.getElementById('speedAmount');
+        elementOutput.innerHTML = slider.value;
+        //update wait time
+        let wt = this.state.waitTime;
+        wt = wt/slider.value;
+        this.setState({waitTime:wt});
+    }
     
     render() {
         const array = [...this.state.array];
@@ -134,6 +151,23 @@ export default class SortVisualizer extends React.Component {
                                 className="slider btn-mode"
                                 id="elementSlider"
                                 onChange={() => this.updateElements()}
+                            />
+                        </div>
+                        <div className="btn slideContainer">
+                            <div>
+                                <b>{'Speed: x'}
+                                <span id="speedAmount">1</span></b>
+                                <br/>
+                            </div>
+                            <input
+                                type="range"
+                                min={.5}
+                                max={2}
+                                step={.5}
+                                defaultValue={1}
+                                className="slider btn-mode"
+                                id="speedSlider"
+                                onChange={() => this.updateSpeed()}
                             />
                         </div>
                     </div>                
