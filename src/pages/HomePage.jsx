@@ -1,3 +1,5 @@
+import logo from "../static/bars.png"
+
 export default function Home() {
     return (
         <>
@@ -5,7 +7,7 @@ export default function Home() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-lg-6" style={{'margin-top':'5%', 'margin-bottom':'5%'}}>
-                            <img src="src/static/bars.png" className="img-fluid" id="home-img" />
+                            <img src={logo} className="img-fluid" id="home-img" alt="Logo"/>
                         </div>
                         <div className="col-12 col-lg-6" id="title-name">SORTING VISUALIZER</div>
                     </div>
