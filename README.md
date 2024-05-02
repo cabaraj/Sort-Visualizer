@@ -1,6 +1,11 @@
 # Sort-Visualizer
 A dynamic Single-Page Application built using React to visualize common sorting algorithms: bubble sort, insertion sort, shell sort, merge sort, and quick sort.
 
+
+
+https://github.com/cabaraj/Sort-Visualizer/assets/99509382/f9b42a4c-0ffa-4d37-8faf-4b156ab73b44
+
+
 ## Objective
 To provide an engaging and intuitive learning platform for users to explore and understand sorting algorithms. The app offers interactive visualizations that simplify complex concepts for enhanced comprehension, particularly to benefit visual learners, like myself. I wanted to make this project an enjoyable learning experience by incorporating gamification-like elements to make learning both fun and effective.
 
