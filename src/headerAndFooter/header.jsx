@@ -36,21 +36,21 @@ export default function Header() {
                         />
                     </div>
                     <div className="offcanvas-body" id="offcanvasBody">
-                        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <ul className="navbar-nav justify-content-end flex-grow-1 pe-3" >
                             <li className="nav-item" data-bs-dismiss="offcanvas">
-                                <Link to="/bubble-sort" className="nav-link active">Bubble Sort</Link>
+                                <Link to="/bubble-sort" className="nav-link active link-mode">Bubble Sort</Link>
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
-                                <Link to="/insertion-sort" className="nav-link active">Insertion Sort</Link>
+                                <Link to="/insertion-sort" className="nav-link active link-mode">Insertion Sort</Link>
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
-                                <Link to="/shell-sort" className="nav-link active">Shell Sort</Link>
+                                <Link to="/shell-sort" className="nav-link active link-mode">Shell Sort</Link>
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
-                                <Link to="/merge-sort" className="nav-link active">Merge Sort</Link>
+                                <Link to="/merge-sort" className="nav-link active link-mode">Merge Sort</Link>
                             </li>
                             <li className="nav-item" data-bs-dismiss="offcanvas">
-                                <Link to="/quick-sort" className="nav-link active">Quick Sort</Link>
+                                <Link to="/quick-sort" className="nav-link active link-mode">Quick Sort</Link>
                             </li>
 
                             <li className="nav-item">
