@@ -14,6 +14,8 @@ const SWAP_COLOR = '#1d9559';
 const NO_SWAP_COLOR = '#e3614d';
 const COMPLETED_COLOR = '#1d9559';
 
+const PIVOT_COLOR = '#8f44e3';
+
 const ALGORITHM = {
     'bubble sort' : bubbleSort,
     'insertion sort': insertionSort,
@@ -93,6 +95,19 @@ export default class SortVisualizer extends React.Component {
                     await this.sleep(2*n+3);//adding +3 to prevent overlapping of modifications
                 }
             }
+            else if(this.props.algorithm === 'quick sort'){
+                let newPivot = true;
+                for(let swap of swaps){
+                    if(swap.length === 1){
+                        this.animateQuickPivot(swap, newPivot);
+                        newPivot = !newPivot;
+                        await this.sleep(1);
+                    } else {
+                        this.animateQuickBars(swap);
+                        await this.sleep(6);
+                    }
+                }
+            }
             else{
                 for(let swap of swaps){
                     this.animateBars(swap);
@@ -100,7 +115,8 @@ export default class SortVisualizer extends React.Component {
                 }
             }
             await this.sleep(1);
-            this.animateSortedBars();            
+            this.animateSortedBars();
+            await this.sleep(3);            
         }
         
         this.activateButtons();
@@ -187,15 +203,20 @@ export default class SortVisualizer extends React.Component {
     }
 
     /* to show as if we change bars, we modify their height */
-    async animateBars(currentBars) {
+
+    async animateBars(swapInfo) {
         const arrayBars = document.getElementsByClassName("array-bar");
-        const b1 = arrayBars[currentBars[0]].style;
-        const b2 = arrayBars[currentBars[1]].style;
+        const index1 = swapInfo[0];
+        const index2 = swapInfo[1];
+        const shouldSwap = swapInfo[2];
+
+        const b1 = arrayBars[index1].style;
+        const b2 = arrayBars[index2].style;
         
         b1.backgroundColor = b2.backgroundColor = COMPARING_COLOR;
 
         await this.sleep(1);    
-        if(currentBars[2]){
+        if(shouldSwap){
             [b1.height, b2.height] = [b2.height, b1.height];
             b1.backgroundColor = b2.backgroundColor = SWAP_COLOR;
         } else {
@@ -206,6 +227,44 @@ export default class SortVisualizer extends React.Component {
         await this.sleep(1);    
     }
 
+    /* Function for Quick Sort */
+    async animateQuickPivot(swapInfo, isNewPivot){
+        //only change bar color btw PIVOT_COLOR and ORIGINAL
+        const arrayBars = document.getElementsByClassName("array-bar");
+        const index = swapInfo[0];
+        const b = arrayBars[index].style;
+        
+        if(isNewPivot){
+            b.backgroundColor = PIVOT_COLOR;
+        } else {
+            b.backgroundColor = INITIAL_COLOR;
+        }
+    }
+
+    async animateQuickBars(swapInfo) {
+        const arrayBars = document.getElementsByClassName("array-bar");
+
+        const index1 = swapInfo[0];
+        const index2 = swapInfo[1];
+        const shouldSwap = swapInfo[2];
+        
+        const b1 = arrayBars[index1].style;
+        const b2 = arrayBars[index2].style;
+        
+        b1.backgroundColor = b2.backgroundColor = COMPARING_COLOR;
+
+        await this.sleep(2);    
+        if(shouldSwap){
+            [b1.height, b2.height] = [b2.height, b1.height];
+            b1.backgroundColor = b2.backgroundColor = SWAP_COLOR;
+        } else {
+            b1.backgroundColor = b2.backgroundColor = NO_SWAP_COLOR;
+        }
+        await this.sleep(2);
+        b1.backgroundColor = b2.backgroundColor = INITIAL_COLOR;
+        await this.sleep(2);    
+    }
+    /* Function for Merge Sort */
     async animateMergedBars(info){
         let i = info[0];
         const arr = info[1];
@@ -222,7 +281,7 @@ export default class SortVisualizer extends React.Component {
         }
 
     }
-
+    /* Function for remaining algorithms */
     async animateSortedBars() {
         const arrayBars = document.getElementsByClassName("array-bar");
         for(let i = 0; i < arrayBars.length; i++){

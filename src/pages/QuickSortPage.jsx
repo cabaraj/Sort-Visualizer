@@ -26,6 +26,9 @@ export default function QuickSortPage(){
                             Call quicksort recursively on the right subarray.
                         </li>
                     </ul>
+                    <p className="p-justify">	
+                        <b>NOTE:</b> The purple bar is the one chosen to be the pivot at each iteration.
+                    </p>
                 </div>
                 <div className="col-12 col-lg-5">
                     <h3>Complexity Analysis</h3>
@@ -56,7 +59,7 @@ export default function QuickSortPage(){
                         </tbody>
                     </table>
                     <i>Where <b>n</b> is the number of elements in the array.</i><br/>
-                    <p style={{'font-size':'small'}}>* in the worst case, where the pivot is always either the biggest or the smallest element on every iteration, the auxiliary space will be O(n).</p>
+                    <p style={{'fontSize':'small'}}>* in the worst case, where the pivot is always either the biggest or the smallest element on every iteration, the auxiliary space will be O(n).</p>
                 </div>
             </div>
             <div className="row">
