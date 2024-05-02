@@ -90,7 +90,7 @@ export default class SortVisualizer extends React.Component {
                 for(let swap of swaps){
                     this.animateMergedBars(swap);
                     let n = swap[1].length;
-                    await this.sleep(2*n);
+                    await this.sleep(2*n+3);//adding +3 to prevent overlapping of modifications
                 }
             }
             else{
@@ -233,16 +233,31 @@ export default class SortVisualizer extends React.Component {
     }
 
     deactivateButtons(){
+        //disable buttons
         const btns = document.getElementsByClassName('btn-mode');
         for(let btn of btns){
             btn.setAttribute('disabled', 'disabled');
         }
+        //disable links
+        const links = document.getElementsByClassName('link-mode');
+        for(let link of links){
+            link.classList.remove('active');
+            link.classList.add('disabled');
+        }
     }
 
     activateButtons(){
+        //activate buttons
         const btns = document.getElementsByClassName('btn-mode');
         for(let btn of btns){
             btn.removeAttribute('disabled');
         }
+        //activate links
+        const links = document.getElementsByClassName('link-mode');
+        for(let link of links){
+            link.classList.remove('disabled');
+            link.classList.add('active');
+        }
     }
+
 }
